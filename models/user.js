@@ -4,6 +4,9 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
+    getFullName() {
+      return this.first_name + ' ' + this.last_name
+    }
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.

@@ -9,9 +9,9 @@ const {
 
 router.get('/', Controller.getRootHandler);
 
-router.use(isLoggedOut)
 router.get('/register', Controller.getRegisterHandler);
 router.post('/register', Controller.postRegisterHandler);
+router.use(isLoggedOut)
 
 router.get('/login', Controller.getLoginHandler);
 router.post('/login', Controller.postLoginHandler);

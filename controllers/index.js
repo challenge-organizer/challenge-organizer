@@ -45,7 +45,7 @@ class Controller {
 				if (user && comparePassword(password, user.password)) {
 					req.session.name = user.name;
 					req.session.userId = user.id;
-					res.redirect('/?login sukses');
+					res.redirect(`/?login sukses `);
 				} else {
 					res.send(`Password atau username salah`);
 				}

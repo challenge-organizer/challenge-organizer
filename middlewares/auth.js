@@ -7,7 +7,7 @@ const isLoggedIn = function (req, res, next) {
 };
 
 const isLoggedOut = function (req, res, next) {
-	const name = req.session.name;
+	const name = req.session.username;
 	if (req.session.userId) {
 		res.redirect(`/?error=Kamu sudah Login hei, ${name}`);
 	} else {
