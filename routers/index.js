@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const challengeRouter = require('./challenge');
+const userRouter = require('./user')
 const Controller = require('../controllers');
+
 const {
 	isLoggedIn,
 	isLoggedOut,
@@ -11,13 +13,13 @@ router.get('/', Controller.getRootHandler);
 
 router.get('/register', Controller.getRegisterHandler);
 router.post('/register', Controller.postRegisterHandler);
-router.use(isLoggedOut)
-
-router.get('/login', Controller.getLoginHandler);
-router.post('/login', Controller.postLoginHandler);
 router.get('/logout', Controller.getLogoutHandler);
+// router.use(isLoggedOut)
 
+router.get('/login', isLoggedOut, Controller.getLoginHandler);
+router.post('/login', isLoggedOut, Controller.postLoginHandler);
 
-router.use('/challenge', challengeRouter);
+router.use('/user', isLoggedIn, userRouter)
+router.use('/challenge', isLoggedIn, challengeRouter);
 
 module.exports = router;

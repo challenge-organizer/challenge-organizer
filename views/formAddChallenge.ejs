@@ -1,0 +1,33 @@
+<%- include('partials/header') %> 
+<%- include('partials/nav') %> 
+<div class="container">
+  <div>
+    <br>
+    <h1 class="display-2">Add Challenge</h1>
+    <br>
+  </div>
+  <div>
+    <form action="/challenge/add" method="POST">
+        <div class="mb-3">
+            <label class="form-label" for="name">Challenge Name</label><br>
+            <input class="form-control" type="text" name="name" id="name">
+        </div>
+        <br>
+        <div class="mb-3">
+            <label class="form-label" for="name">Challenge Code</label><br>
+            <select class="form-select" name="challengeCode" id="">
+                <option value="">--Select--</option>
+                <option value="Js">Js</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <button class="btn btn-primary" type="submit">Add</button>
+            <button class="btn btn-danger"><a href="/challenge">Cancel</a></button>
+        </div>
+    </form>   
+  </div>
+</div>
+<%- include('partials/footer') %> 

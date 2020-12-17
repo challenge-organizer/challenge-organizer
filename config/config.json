@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "badi12345",
-    "database": "db_challenge_organizer",
+    "database": "db_challenge_organizer-II",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },

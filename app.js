@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = process.env.PORT || 3003
+const PORT = process.env.PORT || 3009
 const session = require('express-session')
 const router = require('./routers')
 
@@ -16,5 +16,5 @@ app.use(session({
 app.use('/', router)
 
 app.listen(PORT, () => {
-  console.log(`Challenge Organizer App server is running on http://localhost/:${PORT}`);
+  console.log(`Challenge Organizer App server is running on http://localhost:${PORT}`);
 })

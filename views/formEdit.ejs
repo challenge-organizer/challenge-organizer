@@ -1,0 +1,32 @@
+<%- include('partials/header') %> 
+<%- include('partials/nav') %> 
+<div class="container">
+  <div>
+    <br>
+    <h1 class="display-2">Edit Challenge</h1>
+    <br>
+  </div>
+  <div>
+    <form action="/challenge/<%=challenge.id%>/edit" method="POST">
+        <div class="mb-3">
+            <label class="form-label" for="name">Challenge Name</label><br>
+            <input class="form-control" type="text" name="name" id="name" value="<%=challenge.name%>">
+        </div>
+        <br>
+        <div class="mb-3">
+            <label class="form-label" for="name">Challenge Code</label><br>
+            <select class="form-select" name="challengeCode" id="">
+                <option value="Js" <%= challenge.challengeCode == 'Js' ? 'selected' : '' %>>Js</option>
+                <option value="HTML" <%= challenge.challengeCode == 'HTML' ? 'selected' : '' %>>HTML</option>
+                <option value="CSS" <%= challenge.challengeCode == 'CSS' ? 'selected' : '' %>>CSS</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <button class="btn btn-primary" type="submit">Save Edit</button>
+            <button class="btn btn-danger"><a href="/challenge">Cancel</a></button>
+        </div>
+    </form>
+  </div>
+</div>
+<%- include('partials/footer') %> 

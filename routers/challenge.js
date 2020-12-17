@@ -2,8 +2,6 @@ const router = require('express').Router();
 const Controller = require('../controllers');
 const ChallengeController = require('../controllers/challege');
 
-
-
 router.get('/', ChallengeController.getChallengeHandler);
 router.get('/add', ChallengeController.getChallengeAddHandler);
 router.post('/add', ChallengeController.postChallengeAddHandler);
