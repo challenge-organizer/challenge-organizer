@@ -1,0 +1,34 @@
+<%- include('partials/header') %> 
+<%- include('partials/nav') %> 
+<div class="container">
+  <div>
+    <br>
+    <h1 class="display-2">Register</h1>
+    <br>
+  </div>
+  <div>
+    <form action="/register" method="POST">
+      <div class="mb-3">
+        <label class="form-label" for="first_name">First Name</label>
+        <input class="form-control" type="text" id="first_name" name="first_name" placeholder="e.g: John"/>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="last_name">Last Name</label>
+        <input class="form-control" type="text" id="last_name" name="last_name" placeholder="e.g: Doe"/>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="username">Username</label>
+        <input class="form-control" type="text" id="username" name="username" placeholder="e.g: johndoe"/>
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="password">Password</label>
+        <input class="form-control" type="password" id="password" name="password" placeholder="e.g: your password here"/>
+      </div>
+        <br>
+        <button class="btn btn-primary" type="submit">Register</button>
+        <button class="btn btn-danger"><a href="/">Cancel</a></button>
+      </div>
+    </form>
+  </div>
+</div>
+<%- include('partials/footer') %> 

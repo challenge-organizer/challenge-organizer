@@ -1,0 +1,22 @@
+[
+    {
+        "name":"Movie App ORM",
+        "challengeCode":"Js",
+        "isActive":"true"
+    },
+    {
+        "name":"HelloWorld",
+        "challengeCode":"HTML",
+        "isActive":"true"
+    },
+    {
+        "name":"Web Coloring",
+        "challengeCode":"CSS",
+        "isActive":"true"
+    },
+    {
+        "name":"Looping Lovers",
+        "challengeCode":"Js",
+        "isActive":"true"
+    }
+]
