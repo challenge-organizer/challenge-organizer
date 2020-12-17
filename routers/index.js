@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const challengeRouter = require('./challenge');
+const challengeRouter = require('./challenge');
 const Controller = require('../controllers');
 
 
@@ -13,6 +13,6 @@ router.post('/login', Controller.postLoginHandler);
 router.get('/logout', Controller.getLogoutHandler);
 
 
-// router.use('/challenge', challengeRouter);
+router.use('/challenge', challengeRouter);
 
 module.exports = router;
