@@ -1,0 +1,16 @@
+[
+  {
+    "first_name" : "Admin",
+    "last_name" : "Admin",  
+    "username": "admin",
+    "password": "admin",
+    "isAdmin" : true
+  },
+  {
+    "first_name" : "Badi",
+    "last_name" : "Aba",  
+    "username": "badi",
+    "password": "badiaba",
+    "isAdmin" : true
+  }
+]
