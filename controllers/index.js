@@ -1,3 +1,5 @@
+const ChallengeContoller = require('./challege')
+
 class Controller {
   static getRootHandler() {
 

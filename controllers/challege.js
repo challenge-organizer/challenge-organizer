@@ -1,23 +1,23 @@
-class Challenge {
-  static getChallengeHandler() {
+class ChallengeController {
+  static getChallengeHandler(req, res) {
 
   }
-  static getChallengeAddHandler() {
+  static getChallengeAddHandler(req, res) {
 
   }
-  static postChallengeAddHandler() {
+  static postChallengeAddHandler(req, res) {
 
   }
-  static getChallengeEditHandler() {
+  static getChallengeEditHandler(req, res) {
 
   }
-  static postChallengeEditHandler() {
+  static postChallengeEditHandler(req, res) {
 
   }
-  static getChallengeDeleteHandler() {
+  static getChallengeDeleteHandler(req, res) {
 
   }
 
 }
 
-module.exports = Challenge;
+module.exports = ChallengeController;
