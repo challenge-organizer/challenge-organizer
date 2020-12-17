@@ -127,14 +127,15 @@ class ChallengeController {
     User.findByPk(id, {include:Challenge})
     .then(data=>{
       userData = data
-      return UserChallenge.findAll()
+      return UserChallenge.findAll({where:{UserId:id}})
     })
     .then(data =>{
-      res.render('userScore', {user: userData})
+      res.render('userScore', {user: userData, score:data})
       console.log(data)
     })
     .catch(err=>{
       res.send(err)
+      console.log(err)
     })
 
   }

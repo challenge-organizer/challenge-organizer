@@ -12,14 +12,12 @@
         <tr>
             <th>Challenge</th>
             <th>Challenge Code</th>
-            <th>Score</th>
             <th>Action</th>
         </tr>
         <%challenges.forEach((el)=>{%>
             <tr>
                 <td><%=el.name%></td>
                 <td><%=el.challengeCode%></td>
-                <td></td>
                 <td><a href="/challenge/<%=el.id%>/edit">Edit</a> | <a href="/challenge/<%=el.id%>/delete">Delete</a></td>
             </tr>
         <%})%>

@@ -12,12 +12,12 @@
             <th>Challenge</th>
             <th>Score</th>
         </tr>
-        <%user.Challenges.forEach((el)=>{%>
+        <%for (let i = 0; i < user.Challenges.length; i ++ ){%>
             <tr>
-                <td><%=el.name%></td>
-                <td></td>
+                <td><%=user.Challenges[i].name%></td>
+                <td><%=score[i].Score%></td>
             </tr>
-        <%})%>
+        <%}%>
     </table>
     
 </body>
