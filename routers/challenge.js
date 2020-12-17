@@ -10,5 +10,9 @@ router.get('/:id/edit', ChallengeController.getChallengeEditHandler);
 router.post('/:id/edit', ChallengeController.postChallengeEditHandler);
 router.get('/:id/delete', ChallengeController.getChallengeDeleteHandler);
 
+router.get('/user', ChallengeController.getUser)
+router.get('/user/:id/giveScore', ChallengeController.getScore)
+router.post('/user/:id/giveScore', ChallengeController.postScore)
+
 
 module.exports = router;

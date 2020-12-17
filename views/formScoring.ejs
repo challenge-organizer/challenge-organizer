@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoring Sheet</title>
+</head>
+<body>
+    <h1>Scoring Sheet</h1>
+    <h3><%=user.first_name%> <%=user.last_name%></h3>
+
+    <form action="/challenge/user/<%=user.id%>/giveScore" method="POST">
+        <label for="Challenge">Challenges:</label><br>
+        <select name="ChallengeId" id="">
+            <%challenge.forEach((el)=>{%>
+                <option value="<%=el.id%>"><%=el.name%></option>
+            <%})%>
+        </select><br><br>
+        <label for="score">Score</label><br>
+        <input type="number" name="score" id="score">
+        <br>
+        <br>
+        <input type="submit" value="Post">
+    </form>
+</body>
+</html>

@@ -1,22 +1,22 @@
 [
     {
         "name":"Movie App ORM",
-        "challengeCode":"MAO-Js",
+        "challengeCode":"Js",
         "isActive":"true"
     },
     {
         "name":"HelloWorld",
-        "challengeCode":"H-HTML",
+        "challengeCode":"HTML",
         "isActive":"true"
     },
     {
         "name":"Web Coloring",
-        "challengeCode":"WC-CSS",
+        "challengeCode":"CSS",
         "isActive":"true"
     },
     {
         "name":"Looping Lovers",
-        "challengeCode":"LL-Js",
+        "challengeCode":"Js",
         "isActive":"true"
     }
 ]
