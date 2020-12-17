@@ -10,7 +10,7 @@ router.get('/:id/edit', ChallengeController.getChallengeEditHandler);
 router.post('/:id/edit', ChallengeController.postChallengeEditHandler);
 router.get('/:id/delete', ChallengeController.getChallengeDeleteHandler);
 //=======================================================================
-//user tampilan admin
+//user tampilan dari admin
 router.get('/user/admin', ChallengeController.getUserAdmin)
 router.get('/user/admin/:id/giveScore', ChallengeController.getScore)
 router.post('/user/admin/:id/giveScore', ChallengeController.postScore)
@@ -18,6 +18,7 @@ router.post('/user/admin/:id/giveScore', ChallengeController.postScore)
 
 router.get('/user/user', ChallengeController.getUserUser)
 router.get('/user/user/:id/seeScore', ChallengeController.getUserScore)
+router.get('/user/user/:id/chart', ChallengeController.getUserScoreChart)
 
 
 module.exports = router;

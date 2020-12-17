@@ -131,14 +131,34 @@ class ChallengeController {
     })
     .then(data =>{
       res.render('userScore', {user: userData, score:data})
-      console.log(data)
     })
     .catch(err=>{
       res.send(err)
-      console.log(err)
     })
 
   }
+  static getUserScoreChart (req, res){
+    let id = req.params.id
+    let userData;
+    User.findByPk(id, {include:Challenge})
+    .then(data=>{
+      userData = data
+      return UserChallenge.findAll({where:{UserId:id}})
+    })
+    .then(data =>{
+      let challenge =[]
+      let score = []
+      for (let i = 0; i < userData.Challenges.length; i ++ ){
+        challenge.push(userData.Challenges[i].name)
+        score.push(data[i].Score)
+        }
+        res.render('chart',{challenge: challenge, score:score})
+    })
+    .catch(err=>{
+      res.send(err)
+    })
+  }
 }
+
 
 module.exports = ChallengeController;
