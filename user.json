@@ -1,5 +1,23 @@
 [
     {
-        
+        "first_name":"cakra",
+        "last_name":"bilisairo",
+        "username":"password",
+        "password":"postgres",
+        "isAdmin":"false"
+    },
+    {
+        "first_name":"edi",
+        "last_name":"gurero",
+        "username":"password",
+        "password":"postgres",
+        "isAdmin":"false"
+    },
+    {
+        "first_name":"sbastian",
+        "last_name":"walawala",
+        "username":"password",
+        "password":"postgres",
+        "isAdmin":"false"
     }
 ]
