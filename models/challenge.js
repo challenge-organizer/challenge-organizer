@@ -15,8 +15,22 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Challenge.init({
-    name: DataTypes.STRING,
-    challengeCode: DataTypes.STRING,
+    name: {
+      type:DataTypes.STRING,
+      validate:{
+        notEmpty:{
+          msg: "Challenge Name Can't Empty"
+        }
+      }
+    },
+    challengeCode: {
+      type:DataTypes.STRING,
+      validate:{
+        notEmpty:{
+          msg: "Challenge Code Can't Empty"
+        }
+      }
+    },
     isActive: DataTypes.BOOLEAN
   },{
     sequelize,

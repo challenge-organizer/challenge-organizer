@@ -1,17 +1,17 @@
 
-const {Challenge} = require('../models/index')
+const {Challenge, User} = require('../models/index')
 
 class ChallengeController {
   static getChallengeHandler(req, res) {
     Challenge.findAll()
     .then(data=>{
       res.render('challengeHandler', {challenges: data})
+      console.log(data)
     })
     .catch(err=>{
       res.send(err)
     })
   }
-
   static getChallengeAddHandler(req, res) {
     res.render('formAddChallenge')
   }
@@ -25,11 +25,10 @@ class ChallengeController {
     Challenge.create(data)
     .then(data=>{
       res.redirect('/challenge')
-      console.log(body.name)
       console.log('Berhasil menambah data', data)
     })
     .catch(err=>{
-      res.send(err)
+      res.render('formAddChallenge',{msg:err.errors[0].message})
     })
 
   }
