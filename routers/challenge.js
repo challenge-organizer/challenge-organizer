@@ -9,10 +9,15 @@ router.post('/add', ChallengeController.postChallengeAddHandler);
 router.get('/:id/edit', ChallengeController.getChallengeEditHandler);
 router.post('/:id/edit', ChallengeController.postChallengeEditHandler);
 router.get('/:id/delete', ChallengeController.getChallengeDeleteHandler);
+//=======================================================================
+//user tampilan admin
+router.get('/user/admin', ChallengeController.getUserAdmin)
+router.get('/user/admin/:id/giveScore', ChallengeController.getScore)
+router.post('/user/admin/:id/giveScore', ChallengeController.postScore)
+//=========================================================================
 
-router.get('/user', ChallengeController.getUser)
-router.get('/user/:id/giveScore', ChallengeController.getScore)
-router.post('/user/:id/giveScore', ChallengeController.postScore)
+router.get('/user/user', ChallengeController.getUserUser)
+router.get('/user/user/:id/seeScore', ChallengeController.getUserScore)
 
 
 module.exports = router;

@@ -9,7 +9,7 @@
     <h1>Scoring Sheet</h1>
     <h3><%=user.first_name%> <%=user.last_name%></h3>
 
-    <form action="/challenge/user/<%=user.id%>/giveScore" method="POST">
+    <form action="/challenge/user/admin/<%=user.id%>/giveScore" method="POST">
         <label for="Challenge">Challenges:</label><br>
         <select name="ChallengeId" id="">
             <%challenge.forEach((el)=>{%>

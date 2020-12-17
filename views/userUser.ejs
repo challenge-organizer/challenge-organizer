@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge Handler</title>
+</head>
+<body>
+    <h1>Data User</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+        <%user.forEach((el)=>{%>
+            <tr>
+                <td><%=el.first_name%> <%=el.last_name%></td>
+                <td><a href="/challenge/user/user/<%=el.id%>/seeScore">See Score</a></td>
+            </tr>
+        <%})%>
+    </table>
+    
+</body>
+</html>

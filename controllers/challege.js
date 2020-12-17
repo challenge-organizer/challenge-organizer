@@ -1,5 +1,6 @@
 
 const {Challenge, User, UserChallenge} = require('../models/index')
+const { use } = require('../routers/challenge')
 
 class ChallengeController {
   static getChallengeHandler(req, res) {
@@ -9,6 +10,7 @@ class ChallengeController {
       console.log(data)
     })
     .catch(err=>{
+      console.log(err)
       res.send(err)
     })
   }
@@ -69,10 +71,10 @@ class ChallengeController {
       res.send(err)
     })
   }
-  static getUser (req, res){
+  static getUserAdmin (req, res){
     User.findAll()
     .then(data=>{
-      res.render('user', {user: data})
+      res.render('userAdmin', {user: data})
     })
     .catch(err=>{
       res.send(err)
@@ -103,12 +105,38 @@ class ChallengeController {
     }
     UserChallenge.create(data)
     .then(data=>{
-      res.redirect('/challenge/user')
+      res.redirect('/challenge/user/admin')
       console.log(body)
     })
     .catch(err=>{
       res.send(err)
     })
+  }
+  static getUserUser(req, res){
+    User.findAll()
+    .then(data=>{
+      res.render('userUser', {user: data})
+    })
+    .catch(err=>{
+      res.send(err)
+    })
+  }
+  static getUserScore(req, res){
+    let id = req.params.id
+    let userData;
+    User.findByPk(id, {include:Challenge})
+    .then(data=>{
+      userData = data
+      return UserChallenge.findAll()
+    })
+    .then(data =>{
+      res.render('userScore', {user: userData})
+      console.log(data)
+    })
+    .catch(err=>{
+      res.send(err)
+    })
+
   }
 }
 
