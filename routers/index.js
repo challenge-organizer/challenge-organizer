@@ -1,16 +1,21 @@
 const router = require('express').Router();
 const challengeRouter = require('./challenge');
 const Controller = require('../controllers');
+const {
+	isLoggedIn,
+	isLoggedOut,
+	isAdmin
+} = require('../middlewares/auth');
 
+router.get('/', Controller.getRootHandler);
 
-router.get('/', Controller.home);
+router.use(isLoggedOut)
+router.get('/register', Controller.getRegisterHandler);
+router.post('/register', Controller.postRegisterHandler);
 
-router.get('/register', Controller.register);
-router.post('/register', Controller.registerDone);
-
-router.get('/login', Controller.loginForm);
-router.post('/login', Controller.login);
-router.get('/logout', Controller.logout);
+router.get('/login', Controller.getLoginHandler);
+router.post('/login', Controller.postLoginHandler);
+router.get('/logout', Controller.getLogoutHandler);
 
 
 router.use('/challenge', challengeRouter);
