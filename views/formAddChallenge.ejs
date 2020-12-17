@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Add Challenge</title>
+</head>
+<body>
+    <h1>Add Challenge</h1>
+    <form action="/challenge/add" method="POST">
+        <div>
+            <label for="name">Challenge Name</label><br>
+            <input type="text" name="name" id="name">
+        </div>
+        <br>
+        <div>
+            <label for="name">Challenge Code</label><br>
+            <select name="challengeCode" id="">
+                <option value="">--Select--</option>
+                <option value="Js">Js</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Add">
+            <button><a href="/challenge/add" style="text-decoration: none; color: black;">Cancel</a></button>
+        </div>
+    </form>
+    
+</body>
+</html>
