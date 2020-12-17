@@ -11,7 +11,7 @@ module.exports = {
       UserId: {
         type: Sequelize.INTEGER,
         references:{
-          model: {tableName: 'Users'},
+          model:{tableName: 'Users'},
           key: 'id'
         },
         onDelete:'CASCADE',
@@ -20,11 +20,14 @@ module.exports = {
       ChallengeId: {
         type: Sequelize.INTEGER,
         references:{
-          model: {tableName: 'Challenges'},
+          model:{tableName: 'Challenges'},
           key: 'id'
         },
         onDelete:'CASCADE',
         onUpdate:'CASCADE'
+      },
+      Score: {
+        type: Sequelize.INTEGER
       },
       createdAt: {
         allowNull: false,

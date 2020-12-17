@@ -9,5 +9,5 @@ Model Challange:
 npx sequelize model:generate --name Challenge --attributes name:string,challengeCode:string,isActive:boolean
 
 Model UserChallange:
-npx sequelize model:generate --name UserChallenge --attributes UserId:integer,ChallengeId:integer
+npx sequelize model:generate --name UserChallenge --attributes UserId:integer,ChallengeId:integer,Score:integer
 
