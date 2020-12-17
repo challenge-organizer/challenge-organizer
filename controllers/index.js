@@ -1,5 +1,10 @@
+
 const { User } = require('../models')
 const { comparePassword, hashPassword } = require('../helpers/bcrypt');
+
+const ChallengeContoller = require('./challege')
+
+
 
 class Controller {
   static getRootHandler(req, res) {

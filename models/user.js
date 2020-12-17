@@ -10,10 +10,13 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
+
+      User.belongsToMany(models.Challenge,{through:models.UserChallenge})
       // define association here
     }
   };
   User.init({
+
     first_name: {
       type: DataTypes.STRING,
       validate: {
@@ -56,6 +59,7 @@ module.exports = (sequelize, DataTypes) => {
         instance.isAdmin = false
       }
     },
+  }, {
     sequelize,
     modelName: 'User',
   });

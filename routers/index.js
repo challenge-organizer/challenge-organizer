@@ -9,6 +9,7 @@ const {
 
 router.get('/', Controller.getRootHandler);
 
+
 router.use(isLoggedOut)
 router.get('/register', Controller.getRegisterHandler);
 router.post('/register', Controller.postRegisterHandler);
@@ -16,7 +17,6 @@ router.post('/register', Controller.postRegisterHandler);
 router.get('/login', Controller.getLoginHandler);
 router.post('/login', Controller.postLoginHandler);
 router.get('/logout', Controller.getLogoutHandler);
-
 
 router.use('/challenge', challengeRouter);
 
