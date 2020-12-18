@@ -10,21 +10,23 @@
   </div>
   <div>
     <button class="btn btn-info"><a href="/challenge/add">Add Challenge</a></button>
-    <table class="table table-hover">
+    <button onclick="generatePdf()" class="btn btn-outline-primary">Download PDF</a></button>
+    <table id="table" class="table table-hover">
       <tr>
         <th scope="col">Challenge</th>
         <th scope="col">Challenge Code</th>
-        <th scope="col">Score</th>
+        <!-- <th scope="col">Score</th> -->
         <th scope="col">Action</th>
       </tr>
       <%challenges.forEach((el)=>{%>
         <tr>
           <td><%=el.name%></td>
           <td><%=el.challengeCode%></td>
-          <td></td>
+          <!-- <td></td> -->
           <td>
           <button class="btn btn-success"><a href="/challenge/<%=el.id%>/edit">Edit</a></button>
           <button class="btn btn-danger"><a href="/challenge/<%=el.id%>/delete">Delete</a></button>
+          
           </td>
         </tr>
       <%})%>

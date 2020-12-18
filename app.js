@@ -13,6 +13,7 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: false }
 }))
+app.use(express.static('public'))
 app.use('/', router)
 
 app.listen(PORT, () => {

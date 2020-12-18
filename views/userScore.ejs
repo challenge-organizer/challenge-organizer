@@ -1,0 +1,31 @@
+<%- include('partials/header') %> 
+<%- include('partials/nav') %> 
+<div class="container">
+  <div>
+		<br>
+	
+		<h1 class="display-2">Data User</h1>
+	
+    <br>
+  </div>
+  <div>
+    <!-- <button class="btn btn-info"><a href="/challenge/add">Add Challenge</a></button> -->
+    <!-- <button onclick="generatePdf()" class="btn btn-outline-primary">Download PDF</a></button> -->
+    
+    <table class="table table-hover">
+        <tr>
+            <th scope="col">Challenge</th>
+            <th scope="col">Score</th>
+        </tr>
+        <%for (let i = 0; i < user.Challenges.length; i ++ ){%>
+            <tr>
+                <td><%=user.Challenges[i].name%></td>
+                <td><%=score[i].Score%></td>
+            </tr>
+        <%}%>
+    </table>
+    <button class="btn btn-info"><a href="/user/user/<%=user.id%>/chart">View Chart</a></button>
+    
+  </div>
+</div>
+<%- include('partials/footer') %> 
