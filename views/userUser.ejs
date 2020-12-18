@@ -1,0 +1,32 @@
+<%- include('partials/header') %> 
+<%- include('partials/nav') %> 
+<div class="container">
+  <div>
+		<br>
+	
+		<h1 class="display-2">Data User</h1>
+	
+    <br>
+  </div>
+  <div>
+    <!-- <button class="btn btn-info"><a href="/challenge/add">Add Challenge</a></button> -->
+    <!-- <button onclick="generatePdf()" class="btn btn-outline-primary">Download PDF</a></button> -->
+    
+    <table class="table table-hover">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+        </tr>
+        <%user.forEach((el)=>{%>
+            <tr>
+                <td><%=el.first_name%> <%=el.last_name%></td>
+                <!-- <td><a href="/challenge/user/user/<%#=el.id%>/seeScore">See Score</a></td> -->
+                <td>
+                    <button class="btn btn-outline-info"><a href="/user/user/<%=el.id%>/seeScore">See Score</a></button>
+                </td>
+            </tr>
+        <%})%>
+    </table>
+  </div>
+</div>
+<%- include('partials/footer') %> 

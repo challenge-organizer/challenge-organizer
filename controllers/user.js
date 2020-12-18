@@ -2,7 +2,11 @@ const {Challenge, User, UserChallenge} = require('../models/index')
   class UserController {
   
   static getUser (req, res){
-    User.findAll()
+    User.findAll(/* {
+      where:{
+        [Op.notLike]: '%hat'
+      }
+    } */)
     .then(data=>{
       res.render('user', {user: data})
     })
@@ -35,13 +39,60 @@ const {Challenge, User, UserChallenge} = require('../models/index')
     }
     UserChallenge.create(data)
     .then(data=>{
-      res.redirect('/challenge/user')
+      res.redirect('/user')
       console.log(body)
     })
     .catch(err=>{
       res.send(err)
     })
   }
+  static getUserUser(req, res){
+    User.findAll()
+    .then(data=>{
+      res.render('userUser', {user: data})
+    })
+    .catch(err=>{
+      res.send(err)
+    })
+  }
+  static getUserScore(req, res){
+    let id = req.params.id
+    let userData;
+    User.findByPk(id, {include:Challenge})
+    .then(data=>{
+      userData = data
+      return UserChallenge.findAll({where:{UserId:id}})
+    })
+    .then(data =>{
+      res.render('userScore', {user: userData, score:data})
+    })
+    .catch(err=>{
+      res.send(err)
+    })
+
+  }
+  static getUserScoreChart (req, res){
+    let id = req.params.id
+    let userData;
+    User.findByPk(id, {include:Challenge})
+    .then(data=>{
+      userData = data
+      return UserChallenge.findAll({where:{UserId:id}})
+    })
+    .then(data =>{
+      let challenge =[]
+      let score = []
+      for (let i = 0; i < userData.Challenges.length; i ++ ){
+        challenge.push(userData.Challenges[i].name)
+        score.push(data[i].Score)
+        }
+        res.render('chart',{challenge: challenge, score:score})
+    })
+    .catch(err=>{
+      res.send(err)
+    })
+  }
+
 }
 
 module.exports = UserController;
